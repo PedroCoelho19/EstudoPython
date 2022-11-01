@@ -108,7 +108,8 @@ image_pokemon_pikachu = Image.open('images/cabeca-pikachu.png')
 image_pokemon_pikachu = image_pokemon_pikachu.resize((40, 40))
 image_pokemon_pikachu = ImageTk.PhotoImage(image_pokemon_pikachu)
 
-pok_imagem_pikachu = Button(janela, image=image_pokemon_pikachu,text='Pikachu', width=150, relief='raised', overrelief=RIDGE,compound=LEFT, padx=5, anchor=NW, font=('Verdana 12'), bg=co1, fg=co0)
+pok_imagem_pikachu = Button(janela, image=image_pokemon_pikachu, text='Pikachu', width=150, relief='raised',
+                            overrelief=RIDGE, compound=LEFT, padx=5, anchor=NW, font=('Verdana 12'), bg=co1, fg=co0)
 pok_imagem_pikachu.place(x=375, y=10)
 
 # Image do bulbasaur
@@ -116,7 +117,8 @@ image_pokemon_bulbasaur = Image.open('images/cabeca-bulbasaur.png')
 image_pokemon_bulbasaur = image_pokemon_bulbasaur.resize((40, 40))
 image_pokemon_bulbasaur = ImageTk.PhotoImage(image_pokemon_bulbasaur)
 
-pok_imagem_bulbasaur = Button(janela, image=image_pokemon_bulbasaur,text='Bulbasaur', width=150, relief='raised', overrelief=RIDGE,compound=LEFT, padx=5, anchor=NW, font=('Verdana 12'), bg=co1, fg=co0)
+pok_imagem_bulbasaur = Button(janela, image=image_pokemon_bulbasaur, text='Bulbasaur', width=150,
+                              relief='raised', overrelief=RIDGE, compound=LEFT, padx=5, anchor=NW, font=('Verdana 12'), bg=co1, fg=co0)
 pok_imagem_bulbasaur.place(x=375, y=65)
 
 # Image do charmander
@@ -124,7 +126,8 @@ image_pokemon_charmander = Image.open('images/cabeca-charmander.png')
 image_pokemon_charmander = image_pokemon_charmander.resize((40, 40))
 image_pokemon_charmander = ImageTk.PhotoImage(image_pokemon_charmander)
 
-pok_imagem_charmander = Button(janela, image=image_pokemon_charmander,text='Charmander', width=150, relief='raised', overrelief=RIDGE,compound=LEFT, padx=5, anchor=NW, font=('Verdana 12'), bg=co1, fg=co0)
+pok_imagem_charmander = Button(janela, image=image_pokemon_charmander, text='Charmander', width=150,
+                               relief='raised', overrelief=RIDGE, compound=LEFT, padx=5, anchor=NW, font=('Verdana 12'), bg=co1, fg=co0)
 pok_imagem_charmander.place(x=375, y=120)
 
 # Image do gyarados
@@ -132,7 +135,8 @@ image_pokemon_gyarados = Image.open('images/cabeca-gyarados.png')
 image_pokemon_gyarados = image_pokemon_gyarados.resize((40, 40))
 image_pokemon_gyarados = ImageTk.PhotoImage(image_pokemon_gyarados)
 
-pok_imagem_gyarados = Button(janela, image=image_pokemon_gyarados,text='Gyaradoschu', width=150, relief='raised', overrelief=RIDGE,compound=LEFT, padx=5, anchor=NW, font=('Verdana 12'), bg=co1, fg=co0)
+pok_imagem_gyarados = Button(janela, image=image_pokemon_gyarados, text='Gyaradoschu', width=150,
+                             relief='raised', overrelief=RIDGE, compound=LEFT, padx=5, anchor=NW, font=('Verdana 12'), bg=co1, fg=co0)
 pok_imagem_gyarados.place(x=375, y=175)
 
 # Image do gengar
@@ -140,7 +144,8 @@ image_pokemon_gengar = Image.open('images/cabeca-gengar.png')
 image_pokemon_gengar = image_pokemon_gengar.resize((40, 40))
 image_pokemon_gengar = ImageTk.PhotoImage(image_pokemon_gengar)
 
-pok_imagem_Gengar = Button(janela, image=image_pokemon_gengar,text='Gengar', width=150, relief='raised', overrelief=RIDGE,compound=LEFT, padx=5, anchor=NW, font=('Verdana 12'), bg=co1, fg=co0)
+pok_imagem_Gengar = Button(janela, image=image_pokemon_gengar, text='Gengar', width=150, relief='raised',
+                           overrelief=RIDGE, compound=LEFT, padx=5, anchor=NW, font=('Verdana 12'), bg=co1, fg=co0)
 pok_imagem_Gengar.place(x=375, y=230)
 
 # Image do dragonite
@@ -148,7 +153,8 @@ image_pokemon_dragonite = Image.open('images/cabeca-dragonite.png')
 image_pokemon_dragonite = image_pokemon_dragonite.resize((40, 40))
 image_pokemon_dragonite = ImageTk.PhotoImage(image_pokemon_dragonite)
 
-pok_imagem_dragonite = Button(janela, image=image_pokemon_dragonite,text='Dragonite', width=150, relief='raised', overrelief=RIDGE,compound=LEFT, padx=5, anchor=NW, font=('Verdana 12'), bg=co1, fg=co0)
+pok_imagem_dragonite = Button(janela, image=image_pokemon_dragonite, text='Dragonite', width=150,
+                              relief='raised', overrelief=RIDGE, compound=LEFT, padx=5, anchor=NW, font=('Verdana 12'), bg=co1, fg=co0)
 pok_imagem_dragonite.place(x=375, y=285)
 
 janela.mainloop()
