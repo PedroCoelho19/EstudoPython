@@ -1,8 +1,10 @@
+from glob import glob
 from tkinter import *
 from tkinter import ttk
 
 from PIL import Image, ImageTk
 
+from dados import *
 
 # cores ------------------------------------
 co0 = "#444466"  # Preta
@@ -30,31 +32,51 @@ style.theme_use('clam')
 frame_pokemon = Frame(janela, width=550, height=290, relief='flat')
 frame_pokemon.grid(row=1, column=0)
 
+
+def trocar_pokemon(i):
+    global image_pokemon, pok_imagem
+
+    #trocando a cor do fundo do frame_pokemon
+    frame_pokemon['bg'] = pokemon[i]['tipo'][3]
+    # tipo de pokemon
+
+    pok_nome['text'] = i
+    pok_nome['bg'] = pokemon[i]['tipo'][3]
+    pok_tipo['text'] = pokemon[i]['tipo'][1]
+    pok_tipo['bg'] = pokemon[i]['tipo'][3]
+    pok_id['text'] = pokemon[i]['tipo'][0]
+    pok_id['bg'] = pokemon[i]['tipo'][3]
+    
+    image_pokemon = pokemon[i]['tipo'][2]
+
+    # Image do pokemon
+    image_pokemon = Image.open(image_pokemon)
+    image_pokemon = image_pokemon.resize((238, 238))
+    image_pokemon = ImageTk.PhotoImage(image_pokemon)
+
+    pok_imagem = Label(frame_pokemon, image=image_pokemon,
+                    relief='flat', bg=pokemon[i]['tipo'][3], fg=co1)
+    pok_imagem.place(x=60, y=50)
+
+    pok_tipo.lift()
+
+
+
 # nome
-pok_nome = Label(frame_pokemon, text='Pikachu', relief='flat',
-                 anchor=CENTER, font=('Fixedsys 20'), bg=co1, fg=co0)
+pok_nome = Label(frame_pokemon, text='', relief='flat',
+                 anchor=CENTER, font=('Fixedsys 20'), fg=co1)
 pok_nome.place(x=12, y=15)
 
 # categoria
 pok_tipo = Label(frame_pokemon, text='Eletrico', relief='flat',
-                 anchor=CENTER, font=('Ivy 10 bold'), bg=co1, fg=co0)
+                 anchor=CENTER, font=('Ivy 10 bold'), bg=co1, fg=co1)
 pok_tipo.place(x=12, y=50)
 
 # id
 pok_id = Label(frame_pokemon, text='#025', relief='flat',
-               anchor=CENTER, font=('Ivy 10 bold'), bg=co1, fg=co0)
+               anchor=CENTER, font=('Ivy 10 bold'), bg=co1, fg=co1)
 pok_id.place(x=12, y=75)
 
-# Image do pokemon
-image_pokemon = Image.open('images/pikachu.png')
-image_pokemon = image_pokemon.resize((238, 238))
-image_pokemon = ImageTk.PhotoImage(image_pokemon)
-
-pok_imagem = Label(frame_pokemon, image=image_pokemon,
-                   relief='flat', bg=co1, fg=co0)
-pok_imagem.place(x=60, y=50)
-
-pok_tipo.lift()
 
 # status
 pok_status = Label(janela, text='Status', relief='flat',
@@ -108,7 +130,7 @@ image_pokemon_pikachu = Image.open('images/cabeca-pikachu.png')
 image_pokemon_pikachu = image_pokemon_pikachu.resize((40, 40))
 image_pokemon_pikachu = ImageTk.PhotoImage(image_pokemon_pikachu)
 
-pok_imagem_pikachu = Button(janela, image=image_pokemon_pikachu, text='Pikachu', width=150, relief='raised',
+pok_imagem_pikachu = Button(janela, command=lambda: trocar_pokemon('Pikachu'),  image=image_pokemon_pikachu, text='Pikachu', width=150, relief='raised',
                             overrelief=RIDGE, compound=LEFT, padx=5, anchor=NW, font=('Verdana 12'), bg=co1, fg=co0)
 pok_imagem_pikachu.place(x=375, y=10)
 
@@ -117,7 +139,7 @@ image_pokemon_bulbasaur = Image.open('images/cabeca-bulbasaur.png')
 image_pokemon_bulbasaur = image_pokemon_bulbasaur.resize((40, 40))
 image_pokemon_bulbasaur = ImageTk.PhotoImage(image_pokemon_bulbasaur)
 
-pok_imagem_bulbasaur = Button(janela, image=image_pokemon_bulbasaur, text='Bulbasaur', width=150,
+pok_imagem_bulbasaur = Button(janela, command=lambda: trocar_pokemon('Bulbasaur'), image=image_pokemon_bulbasaur, text='Bulbasaur', width=150,
                               relief='raised', overrelief=RIDGE, compound=LEFT, padx=5, anchor=NW, font=('Verdana 12'), bg=co1, fg=co0)
 pok_imagem_bulbasaur.place(x=375, y=65)
 
@@ -126,7 +148,7 @@ image_pokemon_charmander = Image.open('images/cabeca-charmander.png')
 image_pokemon_charmander = image_pokemon_charmander.resize((40, 40))
 image_pokemon_charmander = ImageTk.PhotoImage(image_pokemon_charmander)
 
-pok_imagem_charmander = Button(janela, image=image_pokemon_charmander, text='Charmander', width=150,
+pok_imagem_charmander = Button(janela, command=lambda: trocar_pokemon('Charmander'),  image=image_pokemon_charmander, text='Charmander', width=150,
                                relief='raised', overrelief=RIDGE, compound=LEFT, padx=5, anchor=NW, font=('Verdana 12'), bg=co1, fg=co0)
 pok_imagem_charmander.place(x=375, y=120)
 
@@ -135,7 +157,7 @@ image_pokemon_gyarados = Image.open('images/cabeca-gyarados.png')
 image_pokemon_gyarados = image_pokemon_gyarados.resize((40, 40))
 image_pokemon_gyarados = ImageTk.PhotoImage(image_pokemon_gyarados)
 
-pok_imagem_gyarados = Button(janela, image=image_pokemon_gyarados, text='Gyaradoschu', width=150,
+pok_imagem_gyarados = Button(janela, command=lambda: trocar_pokemon('Gyarados'), image=image_pokemon_gyarados, text='Gyarados', width=150,
                              relief='raised', overrelief=RIDGE, compound=LEFT, padx=5, anchor=NW, font=('Verdana 12'), bg=co1, fg=co0)
 pok_imagem_gyarados.place(x=375, y=175)
 
@@ -144,7 +166,7 @@ image_pokemon_gengar = Image.open('images/cabeca-gengar.png')
 image_pokemon_gengar = image_pokemon_gengar.resize((40, 40))
 image_pokemon_gengar = ImageTk.PhotoImage(image_pokemon_gengar)
 
-pok_imagem_Gengar = Button(janela, image=image_pokemon_gengar, text='Gengar', width=150, relief='raised',
+pok_imagem_Gengar = Button(janela, command=lambda: trocar_pokemon('Gengar'), image=image_pokemon_gengar, text='Gengar', width=150, relief='raised',
                            overrelief=RIDGE, compound=LEFT, padx=5, anchor=NW, font=('Verdana 12'), bg=co1, fg=co0)
 pok_imagem_Gengar.place(x=375, y=230)
 
@@ -153,8 +175,11 @@ image_pokemon_dragonite = Image.open('images/cabeca-dragonite.png')
 image_pokemon_dragonite = image_pokemon_dragonite.resize((40, 40))
 image_pokemon_dragonite = ImageTk.PhotoImage(image_pokemon_dragonite)
 
-pok_imagem_dragonite = Button(janela, image=image_pokemon_dragonite, text='Dragonite', width=150,
+pok_imagem_dragonite = Button(janela, command=lambda: trocar_pokemon('Dragonite'), image=image_pokemon_dragonite, text='Dragonite', width=150,
                               relief='raised', overrelief=RIDGE, compound=LEFT, padx=5, anchor=NW, font=('Verdana 12'), bg=co1, fg=co0)
 pok_imagem_dragonite.place(x=375, y=285)
+
+
+trocar_pokemon('Dragonite')
 
 janela.mainloop()
